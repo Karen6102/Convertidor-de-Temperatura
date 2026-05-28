@@ -1,0 +1,104 @@
+:root {
+  --bg-color: #080b10;
+  --text-main: #f3f6f9;
+  --text-muted: #78899a;
+  --accent-secondary: #00f0ff;
+  --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--bg-color);
+  /* Fondo con degradado galáctico */
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(112, 0, 255, 0.12) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(0, 240, 255, 0.08) 0px, transparent 50%);
+  color: var(--text-main);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Contenedor invisible para centrar y ordenar los elementos en vertical */
+body > div, main, form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  width: 100%;
+  max-width: 360px;
+  text-align: center;
+}
+
+/* Textos de etiquetas (temperature, from, to) */
+label, body {
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: var(--text-main);
+}
+
+/* El campo de texto/número */
+input[type="number"], input[type="text"] {
+  width: 140px;
+  padding: 10px 14px;
+  font-size: 1.3rem;
+  font-weight: 600;
+  text-align: center;
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  outline: none;
+  transition: all 0.3s;
+}
+
+input[type="number"]:focus {
+  border-color: var(--accent-secondary);
+  box-shadow: 0 0 15px rgba(0, 240, 255, 0.2);
+}
+
+/* Listas desplegables (Selects) */
+select {
+  appearance: none;
+  width: 100%;
+  max-width: 280px;
+  padding: 12px 20px;
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: var(--text-main);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  cursor: pointer;
+  outline: none;
+  text-align: center;
+  transition: all 0.2s;
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='%2378899a' d='M8 11.5l-5-5 1.4-1.4L8 8.7l3.6-3.6L13 6.5l-5 5z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 18px center;
+  background-size: 14px;
+}
+
+select:focus {
+  border-color: rgba(0, 240, 255, 0.3);
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* El resultado grande abajo */
+#result, #result-value, h2, p {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-top: 10px;
+  letter-spacing: -0.5px;
+  color: #ffffff;
+  text-shadow: 0 2px 10px rgba(0, 240, 255, 0.2);
+}
